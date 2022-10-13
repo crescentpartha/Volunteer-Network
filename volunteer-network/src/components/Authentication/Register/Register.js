@@ -16,7 +16,7 @@ const Register = () => {
                     <Button className='rounded-0 w-100 fw-semibold my-2' variant="primary" type="submit">
                         Register
                     </Button>
-                    <p className='mt-2 fw-semibold'>Already have an account? <Link className='text-primary fw-normal' to='/signIn'>Login</Link></p>
+                    <p className='mt-2 fw-semibold'>Already have an account? <Link className='text-primary fw-normal' to='/login'>Login</Link></p>
                     <div>
                         <SocialLogin></SocialLogin>
                     </div>

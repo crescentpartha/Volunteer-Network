@@ -8,8 +8,8 @@ const Home = () => {
     return (
         <div>
             <div className='my-4'>
-                <h1 className='text-uppercase'>I grow by helping people in need.</h1>
-                <InputGroup className="m-3 w-75 mx-auto">
+                <h1 className='text-uppercase fw-normal'>I grow by helping people in need</h1>
+                <InputGroup className="m-3 w-50 mx-auto">
                     <Form.Control
                         placeholder="Search..."
                         aria-label="Recipient's username"
