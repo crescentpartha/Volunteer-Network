@@ -7,6 +7,9 @@ import NotFound from './components/Shared/NotFound/NotFound';
 import Register from './components/Authentication/Register/Register';
 import VolunteerRegistration from './components/Home/VolunteerRegistration/VolunteerRegistration';
 import Login from './components/Authentication/Login/Login';
+import Admin from './components/Admin/Admin/Admin';
+import AddEvent from './components/Admin/AddEvent/AddEvent';
+import VolunteerRegisterList from './components/Admin/VolunteerRegisterList/VolunteerRegisterList';
 
 function App() {
   return (
@@ -18,6 +21,10 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/volunteerRegistration' element={<VolunteerRegistration></VolunteerRegistration>}></Route>
+        <Route path='/admin' element={<Admin></Admin>}>
+          <Route path='addEvent' element={<AddEvent></AddEvent>}></Route>
+          <Route path='volunteerRegisterList' element={<VolunteerRegisterList></VolunteerRegisterList>}></Route>
+        </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
