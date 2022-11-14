@@ -1,0 +1,27 @@
+::placeholder {
+    color: '#888';
+    opacity: 0.8;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field,
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: #888;
+}
+
+.upload-button {
+    width: 165px;
+}
+
+@media only screen and (max-width: 694px){
+	.upload-button {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 545px){
+	.upload-button {
+        width: 165px;
+    }
+}
