@@ -1,9 +1,12 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import useLoadSingleEvent from '../../../hooks/useLoadSingleEvent';
 
 const VolunteerRegistration = () => {
     const {eventDetailId} = useParams();
+    const [event] = useLoadSingleEvent(eventDetailId);
+    console.log(event);
 
     const handleRegistration = event => {
         event.preventDefault();
