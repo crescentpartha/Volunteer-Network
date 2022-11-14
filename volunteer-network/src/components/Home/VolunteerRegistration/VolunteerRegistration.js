@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 const VolunteerRegistration = () => {
+    const {eventDetailId} = useParams();
 
     const handleRegistration = event => {
         event.preventDefault();

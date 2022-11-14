@@ -18,9 +18,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/home/:eventDetailId' element={
+          <VolunteerRegistration></VolunteerRegistration>
+        }></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/volunteerRegistration' element={<VolunteerRegistration></VolunteerRegistration>}></Route>
         <Route path='/admin' element={<Admin></Admin>}>
           <Route path='addEvent' element={<AddEvent></AddEvent>}></Route>
           <Route path='volunteerRegisterList' element={<VolunteerRegisterList></VolunteerRegisterList>}></Route>
