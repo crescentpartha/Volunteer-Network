@@ -8,6 +8,20 @@ const AddEvent = () => {
 
     const onSubmit = data => {
         console.log(data);
+
+        // POST a new event from client-side to server-side (database) | Create a new event POST API
+        const url = `http://localhost:5000/event`;
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+        })
     }
 
     return (
@@ -18,7 +32,7 @@ const AddEvent = () => {
                     <div className='' style={{ width: '48%' }}>
                         <div className='text-start pb-3'>
                             <label className='fw-semibold pb-2' htmlFor="">Event Title</label> <br />
-                            <input style={{ border: '1px solid #d6d6d6'}} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Title' {...register("event-title", { required: true, maxLength: 20 })} />
+                            <input style={{ border: '1px solid #d6d6d6'}} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Title' {...register("title", { required: true, maxLength: 20 })} />
                         </div>
                         <div className='text-start'>
                             <label className='fw-semibold pb-2' htmlFor="">Description</label> <br />
@@ -28,7 +42,7 @@ const AddEvent = () => {
                     <div className='' style={{ width: '48%' }}>
                         <div className='text-start pb-3'>
                             <label className='fw-semibold pb-2' htmlFor="">Event Date</label> <br />
-                            <input style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Date' type="date" {...register("event-date", { required: true })} />
+                            <input style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Date' type="date" {...register("date", { required: true })} />
                         </div>
                         <div className='text-start'>
                             <label className='fw-semibold pb-2' htmlFor="">Banner</label> <br />
@@ -37,7 +51,7 @@ const AddEvent = () => {
                                     <img className='pe-2' src={cloudUpload} width='30px' alt="Cloud Upload" />
                                     <span style={{ color: '#0084FF' }}>Upload image</span>
                                 </button>
-                                <input style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Photo URL' type="url" {...register("photo-url", { required: true })} />
+                                <input style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Photo URL' type="url" {...register("bannerImg", { required: true })} />
                             </div>
                         </div>
                     </div>
