@@ -1,10 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import cloudUpload from '../../../images/cloud-upload-outline.png';
 import './AddEvent.css';
 
 const AddEvent = () => {
     const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data);
@@ -22,6 +24,7 @@ const AddEvent = () => {
         .then(result => {
             console.log(result);
         })
+        navigate('/home');
     }
 
     return (
@@ -32,11 +35,11 @@ const AddEvent = () => {
                     <div className='' style={{ width: '48%' }}>
                         <div className='text-start pb-3'>
                             <label className='fw-semibold pb-2' htmlFor="">Event Title</label> <br />
-                            <input style={{ border: '1px solid #d6d6d6'}} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Title' {...register("title", { required: true, maxLength: 20 })} />
+                            <input style={{ border: '1px solid #d6d6d6'}} className='d-block w-100 px-2 py-1 rounded' placeholder='Event Title' {...register("title", { required: true, maxLength: 30 })} />
                         </div>
                         <div className='text-start'>
                             <label className='fw-semibold pb-2' htmlFor="">Description</label> <br />
-                            <textarea style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Description' type="textarea" rows="5" {...register("description", { required: true, maxLength: 30 })} />
+                            <textarea style={{ border: '1px solid #d6d6d6' }} className='d-block w-100 px-2 py-1 rounded' placeholder='Description' type="textarea" rows="5" {...register("description", { required: true, maxLength: 50 })} />
                         </div>
                     </div>
                     <div className='' style={{ width: '48%' }}>

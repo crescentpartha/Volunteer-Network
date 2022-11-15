@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useLoadSingleEvent from '../../../hooks/useLoadSingleEvent';
 
 const VolunteerRegistration = () => {
     const { eventDetailId } = useParams();
     const [event] = useLoadSingleEvent(eventDetailId);
-    const { title, description } = event;
+    const { title, description, bannerImg } = event;
     // console.log(event, title);
+    
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -22,9 +24,23 @@ const VolunteerRegistration = () => {
 
     const handleRegistration = (e) => {
         e.preventDefault();
-        const registration = { name, email, date, eventDescription, eventTitle };
+        const registration = { name, email, date, eventDescription, eventTitle, bannerImg };
+        // console.log(registration);
 
-        console.log(registration);
+        // POST a new volunteerActivity from client-side to database
+        const url = `http://localhost:5000/activity`;
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(registration)
+        })
+        .then(res => res.json())
+        .then(result => {
+            console.log(result);
+        })
+        navigate('/admin/volunteerRegisterList');
     }
 
     return (
