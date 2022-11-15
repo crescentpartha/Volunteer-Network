@@ -9,14 +9,6 @@ const VolunteerRegisterList = () => {
     return (
         <div className='p-4 border-bottom'>
             <h2 className='text-start'>Volunteer Register List</h2>
-            {/* <div>
-                {
-                    activities.map(activity => <DisplayRegisterVolunteer
-                        key={activity._id}
-                        activity={activity}
-                    ></DisplayRegisterVolunteer>)
-                }
-            </div> */}
             <div>
                 <Table responsive>
                     <thead className='bg-light'>

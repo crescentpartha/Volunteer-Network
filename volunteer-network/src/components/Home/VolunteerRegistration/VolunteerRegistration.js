@@ -27,7 +27,7 @@ const VolunteerRegistration = () => {
         const registration = { name, email, date, eventDescription, eventTitle, bannerImg };
         // console.log(registration);
 
-        // POST a new volunteerActivity from client-side to database
+        // POST a new volunteerActivity from client-side to server-side
         const url = `http://localhost:5000/activity`;
         fetch(url, {
             method: 'POST', 
