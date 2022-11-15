@@ -28,7 +28,7 @@ const VolunteerRegistration = () => {
         // console.log(registration);
 
         // POST a new volunteerActivity from client-side to server-side
-        const url = `http://localhost:5000/activity`;
+        const url = `https://volunteer--network--server.herokuapp.com/activity`;
         fetch(url, {
             method: 'POST', 
             headers: {

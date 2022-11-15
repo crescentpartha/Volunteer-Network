@@ -4,7 +4,7 @@ const useDisplayActivities = () => {
     const [activities, setActivities] = useState([]);
 
     useEffect( () => {
-        const url = `http://localhost:5000/activity`;
+        const url = `https://volunteer--network--server.herokuapp.com/activity`;
         fetch(url)
         .then(res => res.json())
         .then(data => setActivities(data));

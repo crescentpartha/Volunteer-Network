@@ -12,7 +12,7 @@ const AddEvent = () => {
         console.log(data);
 
         // POST a new event from client-side to server-side (database) | Create a new event POST API
-        const url = `http://localhost:5000/event`;
+        const url = `https://volunteer--network--server.herokuapp.com/event`;
         fetch(url, {
             method: 'POST', 
             headers: {
