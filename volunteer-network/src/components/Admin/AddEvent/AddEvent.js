@@ -12,7 +12,7 @@ const AddEvent = () => {
         console.log(data);
 
         // POST a new event from client-side to server-side (database) | Create a new event POST API
-        const url = `https://volunteer--network--server.herokuapp.com/event`;
+        const url = `https://volunteer-network-server-crescentpartha.vercel.app/event`;
         fetch(url, {
             method: 'POST', 
             headers: {

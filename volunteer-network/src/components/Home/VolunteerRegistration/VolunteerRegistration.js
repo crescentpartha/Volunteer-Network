@@ -28,7 +28,7 @@ const VolunteerRegistration = () => {
         // console.log(registration);
 
         // POST a new volunteerActivity from client-side to server-side
-        const url = `https://volunteer--network--server.herokuapp.com/activity`;
+        const url = `https://volunteer-network-server-crescentpartha.vercel.app/activity`;
         fetch(url, {
             method: 'POST', 
             headers: {

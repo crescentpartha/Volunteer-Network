@@ -13,7 +13,7 @@ const DisplayRegisterVolunteer = ({ activity }) => {
             console.log('Deleting a volunteerActivity with id = ', id);
 
             // delete a particular volunteerActivity data in client-side and send to the server-side
-            const url = `https://volunteer--network--server.herokuapp.com/activity/${id}`;
+            const url = `https://volunteer-network-server-crescentpartha.vercel.app/activity/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

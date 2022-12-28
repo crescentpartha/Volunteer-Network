@@ -4,7 +4,7 @@ const useLoadSingleEvent = (id) => {
     const [event, setEvent] = useState({});
 
     useEffect( () => {
-        const url = `https://volunteer--network--server.herokuapp.com/event/${id}`;
+        const url = `https://volunteer-network-server-crescentpartha.vercel.app/event/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setEvent(data));
